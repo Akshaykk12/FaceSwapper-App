@@ -3,3 +3,4 @@ numpy
 Pillow
 opencv-python
 insightface
+libgl1-mesa-glx
