@@ -7,11 +7,22 @@ from insightface.app import FaceAnalysis
 import tempfile
 import os
 import base64
+import gdown
+from io import BytesIO
 
 app = FaceAnalysis(name="./buffalo_l/")  
 app.prepare(ctx_id=0, det_size=(640,640))
 
-swapper = insightface.model_zoo.get_model('inswapper_128.onnx', download=True)
+gdrive_url = f'https://drive.google.com/file/d/18O9t37O0PUEzIF6yFEIIvoO0ouSyo2a1/view?usp=sharing'
+
+# Download the model file from Google Drive to memory
+response = gdown.download(gdrive_url, quiet=False, output=None)
+
+# Load the model using BytesIO
+model_bytes = BytesIO(response.content)
+swapper = insightface.model_zoo.get_model(model_bytes)
+
+# swapper = insightface.model_zoo.get_model('inswapper_128.onnx', download=True)
 
 # Function to process images using your machine learning model
 def generate_output(poster, facial):
