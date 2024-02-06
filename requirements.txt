@@ -6,4 +6,3 @@ insightface
 gdown
 onnxruntime
 opencv-python-headless
-libgl1
