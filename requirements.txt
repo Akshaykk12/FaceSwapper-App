@@ -5,3 +5,4 @@ opencv-python
 insightface
 gdown
 onnxruntime
+opencv-python-headless
