@@ -1,7 +1,6 @@
 streamlit
 numpy
 Pillow
-opencv-python
 insightface
 gdown
 onnxruntime
